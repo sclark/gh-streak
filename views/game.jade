@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 #{game.name}
+  table
+    - each player in game.players
+      tr.bold(class=player.status)
+        td
+          a(href='https://github.com/'+player.name) #{player.name}
+        td #{player.streak}

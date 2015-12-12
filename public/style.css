@@ -1,8 +1,29 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px dotted gray;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 1px solid gray;
+}
+
+.good {
+  color: green;
+}
+.warn {
+  color: orange;
+}
+.bad {
+  color: red;
+}
+.bold {
+  font-weight: bold;
 }
