@@ -4,6 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/gh-streak');
+mongoose.model('Game', new mongoose.Schema({
+  name: {type: String, unique: true},
+  players: [{name: String, streak: Number, last: String}]
+}));
 
 var routes = require('./routes/index');
 
